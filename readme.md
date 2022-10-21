@@ -20,7 +20,7 @@ Then visualize the `.vcd` file with `Scansion` or `GtkWave`
 * ✅`SigGen.v`:randomly generate a signal
 * ✅`Modulator.v`: QPSK
 * ✅`Demodulator.v`: deQPSK
-* ✅`ComSys`: communication system assemble & displace module
+* ✅`ComSys.v`: communication system assemble & display module
 * TODO..
 
 
