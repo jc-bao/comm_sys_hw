@@ -1,4 +1,13 @@
 `timescale 1ns / 1ps
+`include "BitError.v" 
+`include "ConvDecode.v"
+`include "ConvEncode.v"
+`include "DeInterleaver.v"
+`include "Interleaver.v"
+`include "Demodulator.v"
+`include "Modulator.v"
+`include "SigGen.v"
+
 
 module ComSys (
     clk_sys,
