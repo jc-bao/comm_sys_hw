@@ -21,9 +21,7 @@ module testbench();
         reset = 0;
         clk_sys = 1;
         #200 reset = 1;
-        //#23333333 reset = 0;
-        //#12345 reset = 1;
-        #10000 $finish;
+        #1000000 $finish;
     end
 
     always #50 clk_sys = ~clk_sys;

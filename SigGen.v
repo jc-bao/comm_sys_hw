@@ -8,7 +8,7 @@ module SigGen(clk, reset, clk_display, data_out, first_sequence);
     reg [12:0] counter;
     reg [3:0] pointer;
     parameter FRAME_LEN = 128000;
-    parameter ZERO_LEN = 160;
+    parameter ZERO_LEN = 32;
     parameter Rand_Len = 2333;
     reg outreg;
     reg[7:0] first_sequence_reg;

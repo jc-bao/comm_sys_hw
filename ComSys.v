@@ -22,8 +22,8 @@ module ComSys (
     wire data_seq;
     wire [1:0] conv_data;
     wire [1:0] il_out;
-    wire FSK;
-    wire [1:0] de_FSK;
+    wire PSK;
+    wire [1:0] de_PSK;
     wire [1:0] error_sig;
     wire [1:0] deil_out;
     wire [7:0] deconv_out;
@@ -104,23 +104,23 @@ module ComSys (
         conv_data,
         il_out
     );
-    Modulator fskmod (
-        clk_sys,
+    Modulator pskmod (
+        clk_sys, 
         reset,
         il_out,
-        FSK
+        PSK
     );
-    Demodulator fskdemod (
+    Demodulator pskdemod (
         clk_sys,
         clk,
         reset,
-        FSK,
-        de_FSK
+        PSK,
+        de_PSK
     );
     BitError error (
         clk,
         reset,
-        de_FSK,
+        de_PSK,
         error_sig
     );
     DeInterleaver dil (
