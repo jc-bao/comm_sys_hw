@@ -17,9 +17,15 @@ Then visualize
 
 ## Structure overview
 
-* `SigGen.v`: randomly generate a signal
+* `SigGen.v`: ✅randomly generate a signal
+* `Modulator.v`: ✅QPSK
+* `Demodulator.v`: ✅deQPSK
+* `ComSys`: ✅communication system assemble & displace module
+* TODO..
 
 
 ## Demostrations
 
-![](https://tva1.sinaimg.cn/large/008vxvgGly1h7d0xqsslcj31dd0u0q6z.jpg)
+|Module|Results|
+|-|-|
+|QPSK Modulator-Demodulator|![](https://tva1.sinaimg.cn/large/008vxvgGly1h7d8bohw5tj30z206wtav.jpg)|

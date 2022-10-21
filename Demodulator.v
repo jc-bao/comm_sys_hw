@@ -9,36 +9,24 @@ output [1:0] dout;
 
 parameter FREQ_DIV = 1 << 7;
 
-reg last_din; 
 reg [1:0] out;
 reg [1:0] din_sample;
 
-reg [7:0] cnt;  // signal change times during one symbol period
 reg [7:0] sysclk_cnt;
-
-parameter k = 128;
-parameter thresh1 = 24;  // k*3/16
-parameter thresh2 = 12;  // k*3/32
-parameter thresh3 = 6;  // k*3/64
 
 assign dout = out;
 
 always @(posedge clk or negedge reset) begin
     if (!reset) begin
-        cnt <= 8'b0;
-        last_din <= 1'b0;
         sysclk_cnt <= 8'b0;
     end
     else begin
         if (clk_symbol == 1'b1) begin
-            cnt <= 8'b0;
             sysclk_cnt <= 8'b0;
         end
         else begin
-            cnt <= cnt + (last_din ^ din);
             sysclk_cnt <= (sysclk_cnt + 1);
         end
-        last_din <= din; 
     end
 
     if (sysclk_cnt == (FREQ_DIV/8))
