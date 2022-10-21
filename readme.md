@@ -13,14 +13,14 @@ chmod +x run.sh
 ./run.sh
 ```
 
-Then visualize 
+Then visualize the `.vcd` file with `Scansion` or `GtkWave`
 
 ## Structure overview
 
-* `SigGen.v`: ✅randomly generate a signal
-* `Modulator.v`: ✅QPSK
-* `Demodulator.v`: ✅deQPSK
-* `ComSys`: ✅communication system assemble & displace module
+* ✅`SigGen.v`:randomly generate a signal
+* ✅`Modulator.v`: QPSK
+* ✅`Demodulator.v`: deQPSK
+* ✅`ComSys`: communication system assemble & displace module
 * TODO..
 
 
