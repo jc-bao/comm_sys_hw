@@ -52,33 +52,6 @@ always @(posedge clk or negedge reset) begin
         
         cnt <= (cnt + 1) % FREQ_DIV;
 
-        // if (cnt1 == 1'b1) begin
-        //     cnt1 <= 1'b0;
-        //     clk1 <= ~clk1;
-        // end
-        // else
-        //     cnt1 <= cnt1 + 1'b1;
-        
-        // if (cnt2 == 2'b11) begin
-        //     cnt2 <= 2'b0;
-        //     clk2 <= ~clk2;
-        // end
-        // else
-        //     cnt2 <= cnt2 + 2'b01;
-        
-        // if (cnt3 == 3'b111) begin
-        //     cnt3 <= 3'b0;
-        //     clk3 <= ~clk3;
-        // end
-        // else
-        //     cnt3 <= cnt3 + 3'b001;
-        
-        // if (cnt4 == 4'b1111) begin
-        //     cnt4 <= 4'b0;
-        //     clk4 <= ~clk4;
-        // end
-        // else
-        //     cnt4 <= cnt4 + 4'b0001;
     end
 end
 

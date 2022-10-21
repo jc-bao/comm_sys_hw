@@ -11,7 +11,6 @@ parameter FREQ_DIV = 1 << 7;
 
 reg last_din; 
 reg [1:0] out;
-reg [1:0] outtmp;
 reg [1:0] din_sample;
 
 reg [7:0] cnt;  // signal change times during one symbol period
@@ -51,25 +50,16 @@ end
 always @(posedge clk_symbol or negedge reset) begin
     if (!reset) begin
         out <= 2'b0;
-        outtmp <= 2'b0;
     end
     else begin
-        if (cnt > thresh1)
+        if (din_sample == 2'b00)
             out <= 2'b00;
-        else if (cnt > thresh2)
+        else if (din_sample == 2'b10)
             out <= 2'b01;
-        else if (cnt > thresh3)
+        else if (din_sample == 2'b11)
             out <= 2'b10;
         else
             out <= 2'b11;
-        if (din_sample == 2'b00)
-            outtmp <= 2'b00;
-        else if (din_sample == 2'b10)
-            outtmp <= 2'b01;
-        else if (din_sample == 2'b11)
-            outtmp <= 2'b10;
-        else
-            outtmp <= 2'b11;
     end
 end
 
